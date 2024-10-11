@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfetb3c1xjf1t"]
+
+[ext_resource type="PackedScene" uid="uid://dnxt4oyogmrlp" path="res://robot/robot.tscn" id="1_k3i1n"]
+[ext_resource type="PackedScene" uid="uid://d1xhbns3jsn32" path="res://block_test/block.tscn" id="2_34gt5"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_k3i1n")]
+position = Vector2(168, 56)
+
+[node name="BlockTest" parent="." instance=ExtResource("2_34gt5")]
+position = Vector2(168, 104)
+
+[node name="BlockTest2" parent="." instance=ExtResource("2_34gt5")]
+position = Vector2(232, 88)
+
+[node name="BlockTest3" parent="." instance=ExtResource("2_34gt5")]
+position = Vector2(216, 24)
+
+[node name="BlockTest4" parent="." instance=ExtResource("2_34gt5")]
+position = Vector2(88, 40)
+
+[node name="BlockTest5" parent="." instance=ExtResource("2_34gt5")]
+position = Vector2(104, 104)
