@@ -21,6 +21,7 @@ var current_direction := Vector2.DOWN
 @onready var ray = $RayCast2D
 var final_position := position + current_direction * TILE_SIZE
 var start_movement := false
+var can_move := true
 
 
 func _ready() -> void:
@@ -28,7 +29,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if start_movement:
+	if start_movement and can_move:
 		position = position.move_toward(final_position, 0.5)
 
 
@@ -37,7 +38,9 @@ func _on_timer_timeout() -> void:
 	final_position = position + current_direction * TILE_SIZE
 	ray.force_raycast_update()
 	ray.set_target_position(current_direction * TILE_SIZE)
-	choose_next_direction()
+	#choose_next_direction()
+	if ray.is_colliding():
+			can_move = false
 	
 
 func choose_next_direction() -> void:
