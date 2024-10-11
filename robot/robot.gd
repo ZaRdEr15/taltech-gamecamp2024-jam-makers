@@ -1,6 +1,5 @@
 extends Area2D
 
-enum Ray {LEFT = 90, RIGHT = -90, UP = -180, DOWN = 0}
 
 # For testing
 const LVL_MOVEMENT: Array[Vector2] = [
@@ -16,11 +15,12 @@ const LVL_MOVEMENT: Array[Vector2] = [
 var final_direction_idx := LVL_MOVEMENT.size() # for testing
 var current_direction_idx: int = 0
 
+
+
 const TILE_SIZE: int = 16
 var current_direction := Vector2.DOWN
 @onready var ray = $RayCast2D
-var final_position := position + current_direction * TILE_SIZE
-var start_movement := false
+@onready var final_position := position + current_direction * TILE_SIZE
 var can_move := true
 
 
@@ -29,12 +29,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if start_movement and can_move:
+	if can_move:
 		position = position.move_toward(final_position, 0.5)
 
 
 func _on_timer_timeout() -> void:
-	start_movement = true
 	final_position = position + current_direction * TILE_SIZE
 	ray.force_raycast_update()
 	ray.set_target_position(current_direction * TILE_SIZE)
