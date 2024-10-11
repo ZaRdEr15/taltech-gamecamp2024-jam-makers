@@ -1,5 +1,6 @@
 extends Area2D
 
+
 # For testing
 const LVL_MOVEMENT: Array[Vector2] = [
 	Vector2.DOWN,
@@ -11,28 +12,38 @@ const LVL_MOVEMENT: Array[Vector2] = [
 	Vector2.LEFT,
 	Vector2.LEFT,
 ]
-const TILE_SIZE: int = 16
-const LERP_WEIGHT: float = 0.5
-
-var final_direction_idx := LVL_MOVEMENT.size()
+var final_direction_idx := LVL_MOVEMENT.size() # for testing
 var current_direction_idx: int = 0
 
-# Called when the node enters the scene tree for the first time.
+
+
+const TILE_SIZE: int = 16
+var current_direction := Vector2.DOWN
+@onready var ray = $RayCast2D
+@onready var final_position := position + current_direction * TILE_SIZE
+var can_move := true
+
+
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
 	pass
 
 
+func _process(delta: float) -> void:
+	if can_move:
+		position = position.move_toward(final_position, 0.5)
+
+
 func _on_timer_timeout() -> void:
-	var current_direction := LVL_MOVEMENT[current_direction_idx]
-	position += current_direction * TILE_SIZE
+	final_position = position + current_direction * TILE_SIZE
+	ray.force_raycast_update()
+	ray.set_target_position(current_direction * TILE_SIZE)
+	#choose_next_direction()
+	if ray.is_colliding():
+			can_move = false
+	
+
+func choose_next_direction() -> void:
+	current_direction = LVL_MOVEMENT[current_direction_idx]
 	current_direction_idx += 1
 	if current_direction_idx == final_direction_idx:
 		current_direction_idx = 0
-
-
-#lerp(position.y, position.y + TILE_SIZE * current_direction, 0.5)

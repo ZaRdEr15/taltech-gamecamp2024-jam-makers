@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yelq7"]
 size = Vector2(16, 16)
 
-[node name="Node2D" type="Area2D"]
+[node name="Robot" type="Area2D"]
 script = ExtResource("1_naail")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,7 +18,7 @@ texture = ExtResource("2_dv8we")
 shape = SubResource("RectangleShape2D_yelq7")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 24)
+target_position = Vector2(0, 16)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
