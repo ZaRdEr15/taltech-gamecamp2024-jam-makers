@@ -6,7 +6,7 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_k3i1n")]
+[node name="Robot" parent="." instance=ExtResource("1_k3i1n")]
 position = Vector2(168, 56)
 
 [node name="BlockTest" parent="." instance=ExtResource("2_34gt5")]
