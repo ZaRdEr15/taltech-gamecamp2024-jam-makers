@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://coxe31iwdpjt0"]
+
+[ext_resource type="Script" path="res://plate_array/platesArray.gd" id="1_ifyuq"]
+[ext_resource type="PackedScene" uid="uid://c5b8xoy8m2wct" path="res://plate/plate.tscn" id="2_8ouiu"]
+
+[node name="PlateArray" type="Node2D" node_paths=PackedStringArray("plateArray")]
+script = ExtResource("1_ifyuq")
+plateArray = [NodePath("Plate2")]
+
+[node name="Plate2" parent="." instance=ExtResource("2_8ouiu")]
+visible = false
