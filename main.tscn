@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfetb3c1xjf1t"]
+[gd_scene load_steps=5 format=3 uid="uid://bfetb3c1xjf1t"]
 
 [ext_resource type="PackedScene" uid="uid://dnxt4oyogmrlp" path="res://robot/robot.tscn" id="1_k3i1n"]
 [ext_resource type="PackedScene" uid="uid://d1xhbns3jsn32" path="res://block_test/block.tscn" id="2_34gt5"]
 [ext_resource type="PackedScene" uid="uid://c5b8xoy8m2wct" path="res://plate/plate.tscn" id="3_pyb2n"]
+[ext_resource type="AudioStream" uid="uid://qwngty6i1p22" path="res://sound/music.mp3" id="4_3skdw"]
 
 [node name="Main" type="Node2D"]
 
@@ -29,3 +30,8 @@ position = Vector2(168, 88)
 
 [node name="Plate2" parent="." instance=ExtResource("3_pyb2n")]
 position = Vector2(216, 88)
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3skdw")
+volume_db = -7.495
+autoplay = true
