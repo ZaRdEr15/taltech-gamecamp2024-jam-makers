@@ -4,13 +4,15 @@ extends Area2D
 @onready var ray = $RayCast2D
 @onready var final_position := position + current_direction * TILE_SIZE
 @onready var starting_pos := position
+@export var move_speed: float = 25.0
+
 
 const TILE_SIZE: int = 16
 const TIMER_WAIT: int = 1
-const MOVE_SPEED: float = 25.0
 
 
-var current_direction := Vector2.DOWN
+var starting_direction := Vector2.DOWN
+var current_direction := starting_direction
 var can_move := true
 var start_movement := false
 var pause := true
@@ -30,7 +32,7 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	if start_movement:
-		position = position.move_toward(final_position, MOVE_SPEED * delta)
+		position = position.move_toward(final_position, move_speed * delta)
 		if position == final_position:
 			$WalkingSound.play()
 			$Timer.start(TIMER_WAIT)
@@ -42,6 +44,7 @@ func _process(delta: float) -> void:
 			if not $Animation.is_playing():
 				death = false
 				position = starting_pos
+				current_direction = starting_direction
 				pause = true
 
 
