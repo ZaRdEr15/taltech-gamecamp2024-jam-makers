@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqytjqik8w6s8"]
-
-[ext_resource type="Script" path="res://turn_towards_arrow.gd" id="1_fnyxu"]
-
-[node name="TurnTowardsArrow" type="Node"]
-script = ExtResource("1_fnyxu")

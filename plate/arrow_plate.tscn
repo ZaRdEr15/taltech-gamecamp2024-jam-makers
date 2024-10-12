@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5b8xoy8m2wct"]
 
 [ext_resource type="Script" path="res://plate/arrow_plate.gd" id="1_6jr5p"]
-[ext_resource type="Texture2D" uid="uid://3kisr6tjpsvu" path="res://art/plate1.png" id="2_74mai"]
-[ext_resource type="AudioStream" uid="uid://crcjak4nwc0bl" path="res://sound/select_place_plate.wav" id="3_u3ko6"]
+[ext_resource type="Texture2D" uid="uid://3kisr6tjpsvu" path="res://assets/plate1.png" id="2_74mai"]
+[ext_resource type="AudioStream" uid="uid://chqdl16g6kil3" path="res://sound/select_place_plate.wav" id="3_u3ko6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgwrx"]
 size = Vector2(14, 14)
