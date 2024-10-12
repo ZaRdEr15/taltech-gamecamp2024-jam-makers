@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5b8xoy8m2wct"]
+[gd_scene load_steps=4 format=3 uid="uid://c5b8xoy8m2wct"]
 
+[ext_resource type="Script" path="res://plate/plate.gd" id="1_6jr5p"]
 [ext_resource type="Texture2D" uid="uid://dyufomctr4tm5" path="res://icon.svg" id="1_ymeab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnt5r"]
 size = Vector2(16, 16)
 
 [node name="Plate" type="Area2D"]
+script = ExtResource("1_6jr5p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
