@@ -1,6 +1,5 @@
 class_name Plate extends Area2D
 
-
 @onready var raycast = $RayCast2D
 @onready var next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
 var can_rotate := false
@@ -12,7 +11,6 @@ func _input(event: InputEvent) -> void:
 			if not event.pressed:
 				rotation_degrees += 90
 				next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
-
 
 
 func _on_area_entered(area: Area2D) -> void:
