@@ -2,6 +2,7 @@ extends Area2D
 
 
 const TILE_SIZE: int = 16
+const TIMER_WAIT: int = 1
 var current_direction := Vector2.DOWN
 @onready var ray = $RayCast2D
 @onready var final_position := position + current_direction * TILE_SIZE
@@ -11,22 +12,36 @@ var pause := true
 
 func _ready() -> void:
 	pass
+	
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.is_action_pressed("run"):
+			if pause:
+				pause = false
+				$Timer.start(TIMER_WAIT)
+			else:
+				pause = true
+				$Timer.stop()
+			print("Pause: ", pause)
 
 
 func _process(delta: float) -> void:
-	if can_move and start_movement:
+	if start_movement:
 		position = position.move_toward(final_position, 0.5)
 		if position == final_position:
-			$Timer.start(1)
+			$Timer.start(TIMER_WAIT)
 			start_movement = false
 
 
 func _on_timer_timeout() -> void:
 	if not pause:
+		if get_overlapping_areas().size() > 0:
+			ray.set_target_position(current_direction * TILE_SIZE)
+		elif ray.is_colliding():
+			print("Raycast colliding")
+			return
 		final_position = position + current_direction * TILE_SIZE
-		ray.force_raycast_update()
 		ray.set_target_position(current_direction * TILE_SIZE)
-		#choose_next_direction()
-		if ray.is_colliding():
-				can_move = false
 		start_movement = true
+		print(can_move)
