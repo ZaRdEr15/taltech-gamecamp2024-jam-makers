@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvPlate" load_steps=3 format=3 uid="uid://7ca0uvspcbxt"]
+
+[ext_resource type="Script" path="res://inv_ui/inv_item/inventory_item.gd" id="1_55u7f"]
+[ext_resource type="Texture2D" uid="uid://3qrluqfdliki" path="res://assets/plate.png" id="2_utv7n"]
+
+[resource]
+script = ExtResource("1_55u7f")
+name = "Arrow"
+texture = ExtResource("2_utv7n")

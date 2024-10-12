@@ -1,30 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlvcty03gagif"]
 
 [ext_resource type="Script" path="res://inv_ui/inv_ui.gd" id="1_f3eml"]
-[ext_resource type="Texture2D" uid="uid://dyufomctr4tm5" path="res://icon.svg" id="2_yvwe6"]
-[ext_resource type="PackedScene" uid="uid://yyhcyw45avnk" path="res://inv_ui/inv_ui_slot.tscn" id="3_gbggh"]
+[ext_resource type="Texture2D" uid="uid://b8ivy0rchlp15" path="res://assets/iventory_ver2.png" id="2_4065d"]
+[ext_resource type="PackedScene" uid="uid://yyhcyw45avnk" path="res://inv_ui/slot/inv_ui_slot.tscn" id="3_gbggh"]
 
 [node name="Inv_UI" type="Control"]
-custom_minimum_size = Vector2(128, 128)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -896.0
-offset_bottom = -672.0
+anchor_left = 0.25
+anchor_right = 0.5
 grow_horizontal = 2
-grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_f3eml")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 338.0
-offset_top = 3.0
-offset_right = 464.0
-offset_bottom = 27.0
+offset_right = 126.0
+offset_bottom = 24.0
 scale = Vector2(4, 4)
-texture = ExtResource("2_yvwe6")
-region_rect = Rect2(0, 0, 128, 128)
+texture = ExtResource("2_4065d")
+region_rect = Rect2(0, 0, 80, 18.2189)
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 1
@@ -33,13 +27,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -9.5
-offset_right = 58.0
-offset_bottom = 9.5
+offset_left = -28.0
+offset_top = -8.0
+offset_right = 28.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 6
+columns = 3
 
 [node name="inv_UI_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_gbggh")]
 layout_mode = 2
@@ -48,13 +42,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_gbggh")]
-layout_mode = 2
-
-[node name="inv_UI_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_gbggh")]
-layout_mode = 2
-
-[node name="inv_UI_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_gbggh")]
-layout_mode = 2
-
-[node name="inv_UI_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_gbggh")]
 layout_mode = 2
