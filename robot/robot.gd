@@ -77,7 +77,7 @@ func get_final_position() -> void:
 	final_position = position + current_direction * TILE_SIZE
 	start_movement = true
 	
-func next_level() -> void:
+func prepare_for_next_level() -> void:
 	can_move = true
 	pause = true
 	current_direction = starting_direction

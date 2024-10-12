@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	# Choose next level
-	area.next_level()
+	area.prepare_for_next_level()
 	print("Level complete!")
 	
