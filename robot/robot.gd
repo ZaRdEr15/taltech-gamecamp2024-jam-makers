@@ -4,7 +4,7 @@ extends Area2D
 @onready var ray = $RayCast2D
 @onready var final_position := position + current_direction * TILE_SIZE
 @onready var starting_pos := position
-@export var move_speed: float = 25.0
+@export var move_speed: float = 80.5
 
 
 const TILE_SIZE: int = 16
@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 				$Timer.start(TIMER_WAIT)
 			start_movement = false
 	else:
-		if not death:
+		if not death and not level_complete:
 			$Animation.play("idle")
 		else:
 			if not $Animation.is_playing():
@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 				position = starting_pos
 				current_direction = starting_direction
 				pause = true
+				level_complete = false
 
 
 func _on_timer_timeout() -> void:
@@ -77,10 +78,15 @@ func get_final_position() -> void:
 	final_position = position + current_direction * TILE_SIZE
 	start_movement = true
 	
+	
 func prepare_for_next_level() -> void:
-	can_move = true
-	pause = true
-	current_direction = starting_direction
 	$LevelCompleteSound.play()
 	$Timer.stop()
+	$Animation.play("level_done")
+	level_complete = true
 	
+
+func _on_animation_animation_finished() -> void:
+	if $Animation.animation == "level_done":
+		can_move = true
+		current_direction = starting_direction
