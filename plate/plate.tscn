@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyufomctr4tm5" path="res://icon.svg" id="1_ymeab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnt5r"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [node name="Plate" type="Area2D"]
 script = ExtResource("1_6jr5p")
@@ -15,4 +15,10 @@ texture = ExtResource("1_ymeab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rnt5r")
-disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 8)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -26,3 +26,6 @@ position = Vector2(104, 104)
 
 [node name="Plate" parent="." instance=ExtResource("3_pyb2n")]
 position = Vector2(168, 88)
+
+[node name="Plate2" parent="." instance=ExtResource("3_pyb2n")]
+position = Vector2(216, 88)

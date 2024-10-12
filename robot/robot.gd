@@ -7,6 +7,7 @@ var current_direction := Vector2.DOWN
 @onready var final_position := position + current_direction * TILE_SIZE
 var can_move := true
 var start_movement := false
+var pause := true
 
 func _ready() -> void:
 	pass
@@ -21,10 +22,11 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	start_movement = true
-	final_position = position + current_direction * TILE_SIZE
-	ray.force_raycast_update()
-	ray.set_target_position(current_direction * TILE_SIZE)
-	#choose_next_direction()
-	if ray.is_colliding():
-			can_move = false
+	if not pause:
+		final_position = position + current_direction * TILE_SIZE
+		ray.force_raycast_update()
+		ray.set_target_position(current_direction * TILE_SIZE)
+		#choose_next_direction()
+		if ray.is_colliding():
+				can_move = false
+		start_movement = true
