@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://iogsaap2pbrb"]
+[gd_scene load_steps=4 format=3 uid="uid://dbodmgqydrv2h"]
 
-[ext_resource type="Script" path="res://plate/plate.gd" id="1_6jr5p"]
 [ext_resource type="Texture2D" uid="uid://3qrluqfdliki" path="res://assets/plate.png" id="2_lrhg0"]
+
+[sub_resource type="GDScript" id="GDScript_bqop0"]
+script/source = "extends Node
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnt5r"]
 size = Vector2(14, 14)
 
 [node name="Plate" type="Area2D"]
-script = ExtResource("1_6jr5p")
+script = SubResource("GDScript_bqop0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

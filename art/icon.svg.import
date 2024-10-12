@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyvbo77x2ijf7"
-path="res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"
+uid="uid://brjunw8wnhx46"
+path="res://.godot/imported/icon.svg-2ffe2e9772a318535303737ea3c29287.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/plate.png"
-dest_files=["res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"]
+source_file="res://art/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-2ffe2e9772a318535303737ea3c29287.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

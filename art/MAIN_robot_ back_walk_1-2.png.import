@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyvbo77x2ijf7"
-path="res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"
+uid="uid://bedkthu3mv4bv"
+path="res://.godot/imported/MAIN_robot_ back_walk_1-2.png-a972ef605378b7237d3ac98b5c7be1fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/plate.png"
-dest_files=["res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"]
+source_file="res://art/MAIN_robot_ back_walk_1-2.png"
+dest_files=["res://.godot/imported/MAIN_robot_ back_walk_1-2.png-a972ef605378b7237d3ac98b5c7be1fc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyvbo77x2ijf7"
-path="res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"
+uid="uid://cw208by7j13lh"
+path="res://.godot/imported/grass_with_flowers2.png-9c9b0f48cb5f762b2010250e635e4b70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/plate.png"
-dest_files=["res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"]
+source_file="res://art/grass_with_flowers2.png"
+dest_files=["res://.godot/imported/grass_with_flowers2.png-9c9b0f48cb5f762b2010250e635e4b70.ctex"]
 
 [params]
 

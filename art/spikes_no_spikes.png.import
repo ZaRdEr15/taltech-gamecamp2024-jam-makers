@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyvbo77x2ijf7"
-path="res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"
+uid="uid://bg3bii56gpn2x"
+path="res://.godot/imported/spikes_no_spikes.png-f8b9fd76c929ae8d159ad9162c4428aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/plate.png"
-dest_files=["res://.godot/imported/plate.png-fc5fd03b3cc28a96735715cf4c314d4a.ctex"]
+source_file="res://art/spikes_no_spikes.png"
+dest_files=["res://.godot/imported/spikes_no_spikes.png-f8b9fd76c929ae8d159ad9162c4428aa.ctex"]
 
 [params]
 
