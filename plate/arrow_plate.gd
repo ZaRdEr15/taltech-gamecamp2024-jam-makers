@@ -1,6 +1,5 @@
 extends BasePlate
 
-
 @onready var raycast = $RayCast2D
 @onready var next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
 
