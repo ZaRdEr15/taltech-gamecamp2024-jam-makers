@@ -1,49 +1,47 @@
 extends Area2D
 
 
-# For testing
-const LVL_MOVEMENT: Array[Vector2] = [
-	Vector2.DOWN,
-	Vector2.DOWN,
-	Vector2.RIGHT,
-	Vector2.RIGHT,
-	Vector2.UP, 
-	Vector2.UP,
-	Vector2.LEFT,
-	Vector2.LEFT,
-]
-var final_direction_idx := LVL_MOVEMENT.size() # for testing
-var current_direction_idx: int = 0
-
-
-
 const TILE_SIZE: int = 16
+const TIMER_WAIT: int = 1
 var current_direction := Vector2.DOWN
 @onready var ray = $RayCast2D
 @onready var final_position := position + current_direction * TILE_SIZE
 var can_move := true
-
+var start_movement := false
+var pause := true
 
 func _ready() -> void:
 	pass
+	
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.is_action_pressed("run"):
+			if pause:
+				pause = false
+				$Timer.start(TIMER_WAIT)
+			else:
+				pause = true
+				$Timer.stop()
+			print("Pause: ", pause)
 
 
 func _process(delta: float) -> void:
-	if can_move:
+	if start_movement:
 		position = position.move_toward(final_position, 0.5)
+		if position == final_position:
+			$Timer.start(TIMER_WAIT)
+			start_movement = false
 
 
 func _on_timer_timeout() -> void:
-	final_position = position + current_direction * TILE_SIZE
-	ray.force_raycast_update()
-	ray.set_target_position(current_direction * TILE_SIZE)
-	#choose_next_direction()
-	if ray.is_colliding():
-			can_move = false
-	
-
-func choose_next_direction() -> void:
-	current_direction = LVL_MOVEMENT[current_direction_idx]
-	current_direction_idx += 1
-	if current_direction_idx == final_direction_idx:
-		current_direction_idx = 0
+	if not pause:
+		if get_overlapping_areas().size() > 0:
+			ray.set_target_position(current_direction * TILE_SIZE)
+		elif ray.is_colliding():
+			print("Raycast colliding")
+			return
+		final_position = position + current_direction * TILE_SIZE
+		ray.set_target_position(current_direction * TILE_SIZE)
+		start_movement = true
+		print(can_move)

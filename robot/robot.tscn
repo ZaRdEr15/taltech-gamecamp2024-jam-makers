@@ -21,6 +21,6 @@ shape = SubResource("RectangleShape2D_yelq7")
 target_position = Vector2(0, 16)
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
