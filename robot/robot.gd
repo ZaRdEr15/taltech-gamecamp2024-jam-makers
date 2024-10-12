@@ -30,18 +30,22 @@ func _process(delta: float) -> void:
 	if start_movement:
 		position = position.move_toward(final_position, 0.5)
 		if position == final_position:
+			$Walking.play()
 			$Timer.start(TIMER_WAIT)
 			start_movement = false
 
 
 func _on_timer_timeout() -> void:
 	if not pause:
-		if get_overlapping_areas().size() > 0:
-			ray.set_target_position(current_direction * TILE_SIZE)
-		elif ray.is_colliding():
-			print("Raycast colliding")
-			return
-		final_position = position + current_direction * TILE_SIZE
-		ray.set_target_position(current_direction * TILE_SIZE)
-		start_movement = true
-		print(can_move)
+		if ray.is_colliding():
+				print("Raycast colliding")
+				#PlayDeathAnimation
+				$Death.play()
+				$Timer.stop()
+				return
+		get_final_position()
+		
+		
+func get_final_position() -> void:
+	final_position = position + current_direction * TILE_SIZE
+	start_movement = true
