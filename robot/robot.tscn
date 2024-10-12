@@ -1,9 +1,62 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnxt4oyogmrlp"]
+[gd_scene load_steps=15 format=3 uid="uid://dnxt4oyogmrlp"]
 
 [ext_resource type="Script" path="res://robot/robot.gd" id="1_naail"]
-[ext_resource type="Texture2D" uid="uid://duy6dpaq5tui5" path="res://art/robot_ver1.png" id="2_voirl"]
+[ext_resource type="Texture2D" uid="uid://cj8lh6bnla5of" path="res://art/MAIN_robot_ death_1-3.png" id="2_eilhi"]
+[ext_resource type="Texture2D" uid="uid://d1sfjmocus6f0" path="res://art/MAIN_robot.png" id="2_lcq3x"]
 [ext_resource type="AudioStream" uid="uid://bchawt5yf4j60" path="res://sound/walking.wav" id="3_brtds"]
+[ext_resource type="Texture2D" uid="uid://cyrhqmm1mvsdw" path="res://art/MAIN_robot_ look_down.png" id="3_gqkbr"]
+[ext_resource type="Texture2D" uid="uid://hevtpe7l4jo5" path="res://art/MAIN_robot_ walk_1-2.png" id="3_mlh1j"]
+[ext_resource type="Texture2D" uid="uid://55skf47iivk4" path="res://art/MAIN_robot_ death_2-3.png" id="3_xyj0b"]
 [ext_resource type="AudioStream" uid="uid://cc4p65nsn3qot" path="res://sound/death.wav" id="4_2xd50"]
+[ext_resource type="Texture2D" uid="uid://b8q0dhicgyfum" path="res://art/MAIN_robot_ death_3-3.png" id="4_pjo7v"]
+[ext_resource type="Texture2D" uid="uid://dbsa14ywo7a3w" path="res://art/MAIN_robot_ walk_2-2.png" id="4_yvv7j"]
+[ext_resource type="Texture2D" uid="uid://c8iasr58t0g48" path="res://art/MAIN_robot_ look_left.png" id="4_yxj1j"]
+[ext_resource type="Texture2D" uid="uid://q6hvj2lw1sdv" path="res://art/MAIN_robot_ look_right.png" id="5_aopik"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_600ue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eilhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xyj0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pjo7v")
+}],
+"loop": false,
+"name": &"death",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lcq3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gqkbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yxj1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aopik")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yvv7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mlh1j")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yelq7"]
 size = Vector2(16, 16)
@@ -11,11 +64,11 @@ size = Vector2(16, 16)
 [node name="Robot" type="Area2D"]
 script = ExtResource("1_naail")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(9.53674e-07, -9.53674e-07)
-scale = Vector2(1.0625, 1.0625)
-texture = ExtResource("2_voirl")
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_600ue")
+animation = &"death"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yelq7")
@@ -26,12 +79,12 @@ target_position = Vector2(0, 16)
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Walking" type="AudioStreamPlayer" parent="."]
+[node name="WalkingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_brtds")
 volume_db = 22.126
 
-[node name="Death" type="AudioStreamPlayer" parent="."]
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2xd50")
-volume_db = -2.811
+volume_db = -0.937
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
