@@ -39,3 +39,12 @@ position = Vector2(168, 88)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(168, 64)
 zoom = Vector2(2.5, 2.5)
+
+[node name="ArrowPlate3" parent="." instance=ExtResource("3_pyb2n")]
+position = Vector2(104, 88)
+
+[node name="ArrowPlate5" parent="." instance=ExtResource("3_pyb2n")]
+position = Vector2(216, 40)
+
+[node name="ArrowPlate4" parent="." instance=ExtResource("3_pyb2n")]
+position = Vector2(104, 40)

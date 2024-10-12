@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 	if start_movement:
 		position = position.move_toward(final_position, move_speed * delta)
 		if position == final_position:
+			$Animation.flip_h = false
 			$WalkingSound.play()
 			$Timer.start(TIMER_WAIT)
 			start_movement = false
@@ -57,7 +58,16 @@ func _on_timer_timeout() -> void:
 				death = true
 				return
 		get_final_position()
-		$Animation.play("walking")
+		match current_direction:
+			Vector2.DOWN:
+				$Animation.play("walking_down")
+			Vector2.UP:
+				$Animation.play("walking_up")
+			Vector2.LEFT:
+				$Animation.play("walking_side")
+				$Animation.flip_h = true
+			Vector2.RIGHT:
+				$Animation.play("walking_side")
 		
 		
 func get_final_position() -> void:
