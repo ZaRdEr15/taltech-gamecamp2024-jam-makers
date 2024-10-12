@@ -1,24 +1,24 @@
 [gd_scene load_steps=23 format=3 uid="uid://dnxt4oyogmrlp"]
 
 [ext_resource type="Script" path="res://robot/robot.gd" id="1_naail"]
-[ext_resource type="Texture2D" uid="uid://cr8decbk5dego" path="res://art/MAIN_robot_ death_1-3.png" id="2_eilhi"]
-[ext_resource type="Texture2D" uid="uid://5noucuf8d126" path="res://art/MAIN_robot.png" id="2_lcq3x"]
-[ext_resource type="AudioStream" uid="uid://bchawt5yf4j60" path="res://sound/walking.wav" id="3_brtds"]
-[ext_resource type="Texture2D" uid="uid://b5sb6s71tfjg6" path="res://art/MAIN_robot_ look_down.png" id="3_gqkbr"]
-[ext_resource type="Texture2D" uid="uid://cjx5g66uunnv5" path="res://art/MAIN_robot_ walk_1-2.png" id="3_mlh1j"]
-[ext_resource type="Texture2D" uid="uid://drwih523pkte6" path="res://art/MAIN_robot_ death_2-3.png" id="3_xyj0b"]
-[ext_resource type="AudioStream" uid="uid://cc4p65nsn3qot" path="res://sound/death.wav" id="4_2xd50"]
-[ext_resource type="Texture2D" uid="uid://dm2mtt5fyasuj" path="res://art/MAIN_robot_ death_3-3.png" id="4_pjo7v"]
-[ext_resource type="Texture2D" uid="uid://ckorbfhjak02x" path="res://art/MAIN_robot_ walk_2-2.png" id="4_yvv7j"]
-[ext_resource type="Texture2D" uid="uid://xnmlffq3cyh3" path="res://art/MAIN_robot_ look_left.png" id="4_yxj1j"]
-[ext_resource type="Texture2D" uid="uid://5b3jlp4pw3cv" path="res://art/MAIN_robot_ look_right.png" id="5_aopik"]
-[ext_resource type="Texture2D" uid="uid://cnp4krc48eo82" path="res://art/MAIN_robot_win_1-3.png" id="9_t7n7x"]
-[ext_resource type="Texture2D" uid="uid://3o6nwox6g1ji" path="res://art/MAIN_robot_win_2-3.png" id="10_sdy6y"]
-[ext_resource type="Texture2D" uid="uid://blx0uh540rehl" path="res://art/MAIN_robot_side.png" id="11_rsfth"]
-[ext_resource type="Texture2D" uid="uid://ctqj4eq2asp8r" path="res://art/MAIN_robot_win_3-3.png" id="11_tb6g6"]
-[ext_resource type="Texture2D" uid="uid://ci6yxu0ffnvw3" path="res://art/MAIN_robot_side_walk.png" id="12_glu4f"]
-[ext_resource type="Texture2D" uid="uid://dfwd8pp5osrth" path="res://art/MAIN_robot_ back_walk_2-2.png" id="13_b66xc"]
-[ext_resource type="Texture2D" uid="uid://dfmx31fd1tpmw" path="res://art/MAIN_robot_ back_walk_1-2.png" id="14_2m2wa"]
+[ext_resource type="Texture2D" uid="uid://cr8decbk5dego" path="res://assets/MAIN_robot_ death_1-3.png" id="2_eilhi"]
+[ext_resource type="Texture2D" uid="uid://5noucuf8d126" path="res://assets/MAIN_robot.png" id="2_lcq3x"]
+[ext_resource type="AudioStream" uid="uid://h0ntg07vayu4" path="res://sound/walking.wav" id="3_brtds"]
+[ext_resource type="Texture2D" uid="uid://b5sb6s71tfjg6" path="res://assets/MAIN_robot_ look_down.png" id="3_gqkbr"]
+[ext_resource type="Texture2D" uid="uid://cjx5g66uunnv5" path="res://assets/MAIN_robot_ walk_1-2.png" id="3_mlh1j"]
+[ext_resource type="Texture2D" uid="uid://drwih523pkte6" path="res://assets/MAIN_robot_ death_2-3.png" id="3_xyj0b"]
+[ext_resource type="AudioStream" uid="uid://cdymfuaybssrd" path="res://sound/death.wav" id="4_2xd50"]
+[ext_resource type="Texture2D" uid="uid://dm2mtt5fyasuj" path="res://assets/MAIN_robot_ death_3-3.png" id="4_pjo7v"]
+[ext_resource type="Texture2D" uid="uid://ckorbfhjak02x" path="res://assets/MAIN_robot_ walk_2-2.png" id="4_yvv7j"]
+[ext_resource type="Texture2D" uid="uid://xnmlffq3cyh3" path="res://assets/MAIN_robot_ look_left.png" id="4_yxj1j"]
+[ext_resource type="Texture2D" uid="uid://5b3jlp4pw3cv" path="res://assets/MAIN_robot_ look_right.png" id="5_aopik"]
+[ext_resource type="Texture2D" uid="uid://cnp4krc48eo82" path="res://assets/MAIN_robot_win_1-3.png" id="9_t7n7x"]
+[ext_resource type="Texture2D" uid="uid://3o6nwox6g1ji" path="res://assets/MAIN_robot_win_2-3.png" id="10_sdy6y"]
+[ext_resource type="Texture2D" uid="uid://blx0uh540rehl" path="res://assets/MAIN_robot_side.png" id="11_rsfth"]
+[ext_resource type="Texture2D" uid="uid://ctqj4eq2asp8r" path="res://assets/MAIN_robot_win_3-3.png" id="11_tb6g6"]
+[ext_resource type="Texture2D" uid="uid://ci6yxu0ffnvw3" path="res://assets/MAIN_robot_side_walk.png" id="12_glu4f"]
+[ext_resource type="Texture2D" uid="uid://dfwd8pp5osrth" path="res://assets/MAIN_robot_ back_walk_2-2.png" id="13_b66xc"]
+[ext_resource type="Texture2D" uid="uid://dfmx31fd1tpmw" path="res://assets/MAIN_robot_ back_walk_1-2.png" id="14_2m2wa"]
 [ext_resource type="AudioStream" uid="uid://bfqhr7t3nmuiu" path="res://sound/level_done.wav" id="17_0bhu0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_600ue"]
@@ -110,7 +110,6 @@ script = ExtResource("1_naail")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_600ue")
-
 animation = &"level_done"
 frame = 2
 frame_progress = 1.0
