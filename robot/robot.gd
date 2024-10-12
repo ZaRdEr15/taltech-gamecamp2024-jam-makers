@@ -13,10 +13,12 @@ const TIMER_WAIT: int = 1
 
 var starting_direction := Vector2.DOWN
 var current_direction := starting_direction
+
 var can_move := true
 var start_movement := false
 var pause := true
 var death := false
+var level_complete := false
 	
 	
 func _input(event: InputEvent) -> void:
@@ -36,7 +38,8 @@ func _process(delta: float) -> void:
 		if position == final_position:
 			$Animation.flip_h = false
 			$WalkingSound.play()
-			$Timer.start(TIMER_WAIT)
+			if not level_complete:
+				$Timer.start(TIMER_WAIT)
 			start_movement = false
 	else:
 		if not death:
@@ -73,3 +76,11 @@ func _on_timer_timeout() -> void:
 func get_final_position() -> void:
 	final_position = position + current_direction * TILE_SIZE
 	start_movement = true
+	
+func next_level() -> void:
+	can_move = true
+	pause = true
+	current_direction = starting_direction
+	$LevelCompleteSound.play()
+	$Timer.stop()
+	
