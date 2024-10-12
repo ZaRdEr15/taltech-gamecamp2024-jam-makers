@@ -1,17 +1,20 @@
 extends Area2D
 
 
-const TILE_SIZE: int = 16
-const TIMER_WAIT: int = 1
-var current_direction := Vector2.DOWN
 @onready var ray = $RayCast2D
 @onready var final_position := position + current_direction * TILE_SIZE
+@onready var starting_pos := position
+
+const TILE_SIZE: int = 16
+const TIMER_WAIT: int = 1
+const MOVE_SPEED: float = 25.0
+
+
+var current_direction := Vector2.DOWN
 var can_move := true
 var start_movement := false
 var pause := true
-
-func _ready() -> void:
-	pass
+var death := false
 	
 	
 func _input(event: InputEvent) -> void:
@@ -23,27 +26,35 @@ func _input(event: InputEvent) -> void:
 			else:
 				pause = true
 				$Timer.stop()
-			print("Pause: ", pause)
 
 
 func _process(delta: float) -> void:
 	if start_movement:
-		position = position.move_toward(final_position, 0.5)
+		position = position.move_toward(final_position, MOVE_SPEED * delta)
 		if position == final_position:
-			$Walking.play()
+			$WalkingSound.play()
 			$Timer.start(TIMER_WAIT)
 			start_movement = false
+	else:
+		if not death:
+			$Animation.play("idle")
+		else:
+			if not $Animation.is_playing():
+				death = false
+				position = starting_pos
+				pause = true
 
 
 func _on_timer_timeout() -> void:
 	if not pause:
 		if ray.is_colliding():
-				print("Raycast colliding")
-				#PlayDeathAnimation
-				$Death.play()
+				$Animation.play("death")
+				$DeathSound.play()
 				$Timer.stop()
+				death = true
 				return
 		get_final_position()
+		$Animation.play("walking")
 		
 		
 func get_final_position() -> void:
