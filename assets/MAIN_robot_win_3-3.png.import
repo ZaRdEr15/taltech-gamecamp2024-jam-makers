@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctqj4eq2asp8r"
-path="res://.godot/imported/MAIN_robot_win_3-3.png-0d3aff8818868e8d7b7d4c1fecad48f0.ctex"
+path="res://.godot/imported/MAIN_robot_win_3-3.png-6ca4c6a1466a28fe6e5452d6275e4b99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MAIN_robot_win_3-3.png"
-dest_files=["res://.godot/imported/MAIN_robot_win_3-3.png-0d3aff8818868e8d7b7d4c1fecad48f0.ctex"]
+source_file="res://assets/MAIN_robot_win_3-3.png"
+dest_files=["res://.godot/imported/MAIN_robot_win_3-3.png-6ca4c6a1466a28fe6e5452d6275e4b99.ctex"]
 
 [params]
 

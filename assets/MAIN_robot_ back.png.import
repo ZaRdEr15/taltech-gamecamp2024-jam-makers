@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xgj5e0gfqjmw"
-path="res://.godot/imported/MAIN_robot_ back.png-76e622e4260d73e988f1037898c8126b.ctex"
+path="res://.godot/imported/MAIN_robot_ back.png-0a64881df066604d635738c8b66a2cb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MAIN_robot_ back.png"
-dest_files=["res://.godot/imported/MAIN_robot_ back.png-76e622e4260d73e988f1037898c8126b.ctex"]
+source_file="res://assets/MAIN_robot_ back.png"
+dest_files=["res://.godot/imported/MAIN_robot_ back.png-0a64881df066604d635738c8b66a2cb0.ctex"]
 
 [params]
 

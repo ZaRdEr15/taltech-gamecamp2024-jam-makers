@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ioe5ain6wihi"
-path="res://.godot/imported/knopka_go.png-5569f9459808b3c74bc2a019ff3c4d30.ctex"
+path="res://.godot/imported/knopka_go.png-a4cdbba63022448888b821177def6dea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/knopka_go.png"
-dest_files=["res://.godot/imported/knopka_go.png-5569f9459808b3c74bc2a019ff3c4d30.ctex"]
+source_file="res://assets/knopka_go.png"
+dest_files=["res://.godot/imported/knopka_go.png-a4cdbba63022448888b821177def6dea.ctex"]
 
 [params]
 

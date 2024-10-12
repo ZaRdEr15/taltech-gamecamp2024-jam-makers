@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg0ve0rw1nv7r"
-path="res://.godot/imported/plate_invisible.png-97c9a9ecfa8d3106ea9e558a01d99e69.ctex"
+path="res://.godot/imported/plate_invisible.png-53a022e0b027da2381b8732e74950ff1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/plate_invisible.png"
-dest_files=["res://.godot/imported/plate_invisible.png-97c9a9ecfa8d3106ea9e558a01d99e69.ctex"]
+source_file="res://assets/plate_invisible.png"
+dest_files=["res://.godot/imported/plate_invisible.png-53a022e0b027da2381b8732e74950ff1.ctex"]
 
 [params]
 

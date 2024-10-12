@@ -1,7 +1,6 @@
 extends Node2D
 
 var mouse_input = 'none'
-@onready var plateArray = $PlateArray
 @export var items = [["Back", 2], ["Arrow", 5]]
 @onready var inv_ui = $CanvasLayer/Inv_UI
 var dict = PlateDict
@@ -29,8 +28,6 @@ func select():
 	var mouse_pos = $TileMapLayer2.local_to_map(get_local_mouse_position())
 	if $TileMapLayer.get_cell_tile_data(mouse_pos):
 		var pos = $TileMapLayer2.map_to_local(mouse_pos)
-		plateArray.plateArray[0].position = pos
-		plateArray.plateArray[0].visible = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

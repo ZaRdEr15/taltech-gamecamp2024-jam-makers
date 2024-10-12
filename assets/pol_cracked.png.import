@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjmna3ohl4qi4"
-path="res://.godot/imported/pol_cracked.png-6c5b70a3dc6426b788d9fff699ee8c9a.ctex"
+path="res://.godot/imported/pol_cracked.png-7cb8183b495c77cb5c942df020313d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pol_cracked.png"
-dest_files=["res://.godot/imported/pol_cracked.png-6c5b70a3dc6426b788d9fff699ee8c9a.ctex"]
+source_file="res://assets/pol_cracked.png"
+dest_files=["res://.godot/imported/pol_cracked.png-7cb8183b495c77cb5c942df020313d3d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci6yxu0ffnvw3"
-path="res://.godot/imported/MAIN_robot_side_walk.png-a463914272ab5d726524535816d88af8.ctex"
+path="res://.godot/imported/MAIN_robot_side_walk.png-bfb7e66cfa1b20cddf479ae9e4c15c03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MAIN_robot_side_walk.png"
-dest_files=["res://.godot/imported/MAIN_robot_side_walk.png-a463914272ab5d726524535816d88af8.ctex"]
+source_file="res://assets/MAIN_robot_side_walk.png"
+dest_files=["res://.godot/imported/MAIN_robot_side_walk.png-bfb7e66cfa1b20cddf479ae9e4c15c03.ctex"]
 
 [params]
 
