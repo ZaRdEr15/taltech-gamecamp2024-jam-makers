@@ -13,8 +13,6 @@ func _ready():
 	if sprite != null:
 		sprite.texture = new_sprite_texture
 		child_sprite.texture = new_sprite_texture
-	else:
-		print("Sprite2D is still null in the ExtendedPlate")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

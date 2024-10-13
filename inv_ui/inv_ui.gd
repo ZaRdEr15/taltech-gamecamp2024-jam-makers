@@ -19,6 +19,9 @@ func take_one(item: String):
 	inv.take_one(item)
 	update_slots()
 	
+func not_empty(name: String):
+	return inv.not_empty(name)
+
 func select(item: String, index: int):
 	item_in_mouse.emit(item)
 	for i in range(slots.size()):

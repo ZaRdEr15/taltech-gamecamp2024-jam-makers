@@ -13,6 +13,18 @@ func take_one(item: String):
 	var items_slots = slots.filter(func(slot): return slot.item == inv_item)
 	if !items_slots.is_empty() and items_slots[0].amount != 0:
 		items_slots[0].amount -= 1
+		
+func not_empty(item_name: String) -> bool:
+	print(item_name)
+	for slot in slots:
+		print(slot)
+		if slot.item and slot.item.name == item_name:
+			print(slot.item.name)
+			print(slot.amount)
+			if slot.amount != 0:
+				print("ja tut")
+				return true
+	return false
 
 func insert(item: InvPlate, amount: int):
 	var items_slots = slots.filter(func(slot): return slot.item == item)
