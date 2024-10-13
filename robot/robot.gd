@@ -2,6 +2,7 @@ extends Area2D
 
 
 @onready var ray = $RayCast2D
+@onready var ray_starter_target = ray.target_position
 @onready var final_position := position + current_direction * TILE_SIZE
 @onready var starting_pos := position
 @export var move_speed: float = 80.5
@@ -47,6 +48,7 @@ func _process(delta: float) -> void:
 		else:
 			if not $Animation.is_playing():
 				death = false
+				ray.target_position = ray_starter_target
 				position = starting_pos
 				current_direction = starting_direction
 				pause = true
