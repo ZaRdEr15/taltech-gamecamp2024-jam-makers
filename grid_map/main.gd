@@ -8,6 +8,8 @@ var dict = PlateDict
 @export var selected_item: BasePlate
 @export var item_to_place: BasePlate
 var can_place: bool = false
+@onready var layers := $"Layers".get_children()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +33,7 @@ func select():
 	if selected_item and can_place and inv_ui.not_empty(item_name):
 		item_to_place = selected_item.duplicate()
 		var mouse_pos = $FrameTileMapLayer.local_to_map(get_local_mouse_position())
-		if $TileMapLayer.get_cell_tile_data(mouse_pos):
+		if layers[0].get_cell_tile_data(mouse_pos):
 			print(item_to_place)
 			var pos = $FrameTileMapLayer.map_to_local(mouse_pos)
 			item_to_place.position = pos
