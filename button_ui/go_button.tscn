@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ycwji5u5bc2"]
+
+[ext_resource type="Texture2D" uid="uid://ioe5ain6wihi" path="res://assets/knopka_go.png" id="1_asfcf"]
+[ext_resource type="Script" path="res://button_ui/go_button.gd" id="2_k41kd"]
+
+[node name="GoButton" type="Button"]
+offset_right = 24.0
+offset_bottom = 24.0
+focus_mode = 0
+toggle_mode = true
+icon = ExtResource("1_asfcf")
+icon_alignment = 1
+script = ExtResource("2_k41kd")
