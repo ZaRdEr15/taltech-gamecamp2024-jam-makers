@@ -90,3 +90,12 @@ func _on_animation_animation_finished() -> void:
 	if $Animation.animation == "level_done":
 		can_move = true
 		current_direction = starting_direction
+
+
+func _on_go_button_pressed() -> void:
+	if pause:
+		pause = false
+		$Timer.start(TIMER_WAIT)
+	else:
+		pause = true
+		$Timer.stop()
