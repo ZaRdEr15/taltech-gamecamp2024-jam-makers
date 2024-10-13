@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dtfn4xa2aup4r"]
+[gd_scene load_steps=22 format=3 uid="uid://dtfn4xa2aup4r"]
 
 [ext_resource type="Script" path="res://grid_map/main.gd" id="1_lxxch"]
 [ext_resource type="PackedScene" uid="uid://yrflrd5v4576" path="res://plate/exit.tscn" id="3_72o0t"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://8ycwji5u5bc2" path="res://button_ui/go_button.tscn" id="11_x7vy5"]
 [ext_resource type="PackedScene" uid="uid://d1xhbns3jsn32" path="res://block_test/block.tscn" id="12_71t70"]
 [ext_resource type="AudioStream" uid="uid://cli4bapcfktil" path="res://sound/music.mp3" id="14_had8a"]
+[ext_resource type="Script" path="res://grid_map/audio_stream_player.gd" id="15_egvu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj5rm"]
 texture = ExtResource("4_cegh4")
@@ -614,9 +615,10 @@ position = Vector2(232, 296)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_had8a")
-volume_db = -13.117
 autoplay = true
+script = ExtResource("15_egvu8")
 
 [connection signal="can_place" from="FrameTileMapLayer" to="." method="_on_frame_tile_map_layer_can_place"]
 [connection signal="pressed" from="GoButton" to="Robot" method="_on_go_button_pressed"]
 [connection signal="item_in_mouse" from="CanvasLayer/Inv_UI" to="." method="_on_inv_ui_item_in_mouse"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
