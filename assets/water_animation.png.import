@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl4h0uxvmgk7j"
-path="res://.godot/imported/jammed_title.png-5795c79c288631c1cc4c7dfc627871a7.ctex"
+uid="uid://djiph8rluoh8y"
+path="res://.godot/imported/water_animation.png-b71d549c5e23fa508e0105d563941e37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jammed_title.png"
-dest_files=["res://.godot/imported/jammed_title.png-5795c79c288631c1cc4c7dfc627871a7.ctex"]
+source_file="res://assets/water_animation.png"
+dest_files=["res://.godot/imported/water_animation.png-b71d549c5e23fa508e0105d563941e37.ctex"]
 
 [params]
 

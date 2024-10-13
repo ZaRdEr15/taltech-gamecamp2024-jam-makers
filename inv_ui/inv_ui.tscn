@@ -43,3 +43,7 @@ layout_mode = 2
 
 [node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_gbggh")]
 layout_mode = 2
+
+[connection signal="take_item" from="NinePatchRect/GridContainer/inv_UI_slot" to="." method="_on_inv_ui_slot_take_item"]
+[connection signal="take_item" from="NinePatchRect/GridContainer/inv_UI_slot2" to="." method="_on_inv_ui_slot_2_take_item"]
+[connection signal="take_item" from="NinePatchRect/GridContainer/inv_UI_slot3" to="." method="_on_inv_ui_slot_3_take_item"]
