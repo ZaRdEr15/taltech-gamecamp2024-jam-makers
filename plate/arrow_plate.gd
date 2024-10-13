@@ -12,8 +12,6 @@ func _ready():
 	if sprite != null:
 		sprite.texture = new_sprite_texture
 		child_sprite.texture = new_sprite_texture
-	else:
-		print("Sprite2D is still null in the ExtendedPlate")
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("right_click") and can_rotate:
