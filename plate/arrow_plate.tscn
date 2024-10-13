@@ -8,6 +8,7 @@
 size = Vector2(14, 14)
 
 [node name="ArrowPlate" type="Area2D"]
+z_index = 1
 script = ExtResource("1_6jr5p")
 plate_type = 1
 
