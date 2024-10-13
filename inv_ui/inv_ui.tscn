@@ -14,8 +14,10 @@ script = ExtResource("1_f3eml")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 126.0
-offset_bottom = 24.0
+offset_left = 120.0
+offset_top = 4.0
+offset_right = 190.0
+offset_bottom = 28.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_4065d")
 region_rect = Rect2(0, 0, 80, 18.2189)

@@ -6,6 +6,8 @@ class_name ArrowPlate
 
 @export var new_sprite_texture: Texture2D
 @onready var child_sprite = $ChildSprite2D
+signal remove_tile
+
 func _ready():
 	#new_sprite_texture = load("res://assets/plate.png")
 	super()
@@ -23,6 +25,7 @@ func _input(event: InputEvent) -> void:
 				next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
 		elif Input.is_action_just_pressed("click"):
 			if can_rotate:
+				remove_tile.emit(position)
 				self.queue_free()
 
 func _on_area_entered(area: Area2D) -> void:

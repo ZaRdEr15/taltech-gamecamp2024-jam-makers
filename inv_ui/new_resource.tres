@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvPlate" load_steps=3 format=3 uid="uid://cdtewk58xvt5n"]
+
+[ext_resource type="Script" path="res://inv_ui/inv_item/inventory_item.gd" id="1_g7otr"]
+[ext_resource type="Texture2D" uid="uid://bgfa5k3wfm8hb" path="res://assets/plate_jump2.png" id="2_nbetp"]
+
+[resource]
+script = ExtResource("1_g7otr")
+name = "Jump"
+texture = ExtResource("2_nbetp")
