@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2uu2718riu13"]
+[gd_scene load_steps=4 format=3 uid="uid://bnh33qv2bqoeo"]
 
 [ext_resource type="Script" path="res://plate/base_plate.gd" id="1_qxilu"]
+[ext_resource type="Texture2D" uid="uid://bfphxvjfwitkj" path="res://assets/tile-selected.png" id="2_a1m0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp1gp"]
 
 [node name="BasePlate" type="Area2D"]
 script = ExtResource("1_qxilu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_a1m0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_kp1gp")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
