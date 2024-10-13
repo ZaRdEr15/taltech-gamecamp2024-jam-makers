@@ -19,12 +19,13 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if Input.is_action_just_pressed("right_click"):
-			print("Got some input: ", event)
 			if can_rotate:
 				$RotateOrSelect.play()
 				rotation_degrees += 90
 				next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
-
+		elif Input.is_action_just_pressed("click"):
+			if can_rotate:
+				self.queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "Robot":
