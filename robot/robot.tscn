@@ -106,13 +106,12 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Robot" type="Area2D"]
+z_index = 2
 script = ExtResource("1_naail")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_600ue")
-animation = &"level_done"
-frame = 2
-frame_progress = 1.0
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yelq7")

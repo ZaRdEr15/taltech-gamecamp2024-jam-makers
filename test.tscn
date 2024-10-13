@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfetb3c1xjf1t"]
+
+[ext_resource type="PackedScene" uid="uid://dnxt4oyogmrlp" path="res://robot/robot.tscn" id="1_hjrfu"]
+[ext_resource type="PackedScene" uid="uid://d1xhbns3jsn32" path="res://block_test/block.tscn" id="2_1qxc6"]
+[ext_resource type="PackedScene" uid="uid://yrflrd5v4576" path="res://plate/exit.tscn" id="3_8jqf4"]
+[ext_resource type="PackedScene" uid="uid://blfmlj6kctvcq" path="res://plate/arrow_plate.tscn" id="4_j3iag"]
+[ext_resource type="PackedScene" uid="uid://8ycwji5u5bc2" path="res://button_ui/go_button.tscn" id="5_6gsa1"]
+[ext_resource type="AudioStream" uid="uid://cli4bapcfktil" path="res://sound/music.mp3" id="6_o5ip8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Robot" parent="." instance=ExtResource("1_hjrfu")]
+position = Vector2(168, 56)
+
+[node name="BlockTest" parent="." instance=ExtResource("2_1qxc6")]
+position = Vector2(168, 104)
+
+[node name="BlockTest2" parent="." instance=ExtResource("2_1qxc6")]
+position = Vector2(232, 88)
+
+[node name="BlockTest3" parent="." instance=ExtResource("2_1qxc6")]
+position = Vector2(216, 24)
+
+[node name="BlockTest4" parent="." instance=ExtResource("2_1qxc6")]
+position = Vector2(88, 40)
+
+[node name="BlockTest5" parent="." instance=ExtResource("2_1qxc6")]
+position = Vector2(104, 104)
+
+[node name="Exit" parent="." instance=ExtResource("3_8jqf4")]
+position = Vector2(168, 40)
+
+[node name="ArrowPlate" parent="." instance=ExtResource("4_j3iag")]
+position = Vector2(168, 88)
+
+[node name="GoButton" parent="." instance=ExtResource("5_6gsa1")]
+offset_left = 262.0
+offset_top = 6.0
+offset_right = 286.0
+offset_bottom = 30.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o5ip8")
+volume_db = -13.117
+autoplay = true
+
+[node name="ArrowPlate3" parent="." instance=ExtResource("4_j3iag")]
+position = Vector2(216, 88)
+
+[node name="ArrowPlate2" parent="." instance=ExtResource("4_j3iag")]
+position = Vector2(216, 40)
+
+[connection signal="pressed" from="GoButton" to="Robot" method="_on_go_button_pressed"]

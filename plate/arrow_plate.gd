@@ -1,4 +1,5 @@
-class_name ArrowPlate extends BasePlate
+extends BasePlate
+class_name ArrowPlate
 
 @onready var raycast = $RayCast2D
 @onready var next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
@@ -14,13 +15,17 @@ func _ready():
 		child_sprite.texture = new_sprite_texture
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("right_click") and can_rotate:
-		if not event.pressed:
-			$RotateOrSelect.play()
-			rotation_degrees += 90
-			next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
-
+	if event is InputEventMouseButton:
+		if Input.is_action_just_pressed("right_click"):
+			if can_rotate:
+				$RotateOrSelect.play()
+				rotation_degrees += 90
+				next_direction = (raycast.to_global(raycast.target_position) - raycast.to_global(Vector2.ZERO)).normalized()
+		elif Input.is_action_just_pressed("click"):
+			if can_rotate:
+				self.queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
-	area.current_direction = next_direction
-	area.ray.set_target_position(area.current_direction * area.TILE_SIZE)
+	if area.name == "Robot":
+		area.current_direction = next_direction
+		area.ray.set_target_position(area.current_direction * area.TILE_SIZE)

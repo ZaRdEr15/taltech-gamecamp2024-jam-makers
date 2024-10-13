@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dks8qpfek337x"]
 
-[ext_resource type="Texture2D" uid="uid://djs4mnx8cjhhp" path="res://assets/jammed_title.png" id="1_4eelv"]
+[ext_resource type="Texture2D" uid="uid://cl4h0uxvmgk7j" path="res://assets/jammed_title.png" id="1_4eelv"]
 [ext_resource type="Texture2D" uid="uid://csh46l2uduhb1" path="res://assets/play_button.png" id="2_4popj"]
 [ext_resource type="Script" path="res://menu/play.gd" id="3_xvof8"]
 

@@ -1,7 +1,7 @@
 extends Button
 
 
-var main = preload("res://main.tscn")
+var main = preload("res://test.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

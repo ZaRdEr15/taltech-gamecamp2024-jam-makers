@@ -15,7 +15,9 @@ func _ready():
 		print("Sprite2D node is not found!")
 
 func _on_mouse_entered() -> void:
+	print("Entered!")
 	can_rotate = true
 
 func _on_mouse_exited() -> void:
+	print("Exited!")
 	can_rotate = false
