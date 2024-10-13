@@ -1,13 +1,27 @@
 [gd_scene load_steps=3 format=3 uid="uid://8ycwji5u5bc2"]
 
 [ext_resource type="Texture2D" uid="uid://ioe5ain6wihi" path="res://assets/knopka_go.png" id="1_asfcf"]
-[ext_resource type="Script" path="res://button_ui/go_button.gd" id="2_k41kd"]
+
+[sub_resource type="GDScript" id="GDScript_r5s7r"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="GoButton" type="Button"]
 offset_right = 24.0
 offset_bottom = 24.0
+scale = Vector2(5, 5)
 focus_mode = 0
 toggle_mode = true
 icon = ExtResource("1_asfcf")
 icon_alignment = 1
-script = ExtResource("2_k41kd")
+script = SubResource("GDScript_r5s7r")
