@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://blfmlj6kctvcq"]
+[gd_scene load_steps=5 format=3 uid="uid://blfmlj6kctvcq"]
 
 [ext_resource type="Script" path="res://plate/arrow_plate.gd" id="1_6jr5p"]
 [ext_resource type="Texture2D" uid="uid://3qrluqfdliki" path="res://assets/plate.png" id="2_gpf5n"]
 [ext_resource type="AudioStream" uid="uid://chqdl16g6kil3" path="res://sound/select_place_plate.wav" id="3_u3ko6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnnrg"]
+size = Vector2(14, 14)
+
 [node name="ArrowPlate" type="Area2D"]
 script = ExtResource("1_6jr5p")
 plate_type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+rotation = -3.14159
+texture = ExtResource("2_gpf5n")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 8)
@@ -15,8 +23,8 @@ target_position = Vector2(0, 8)
 stream = ExtResource("3_u3ko6")
 volume_db = -6.954
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gpf5n")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vnnrg")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
