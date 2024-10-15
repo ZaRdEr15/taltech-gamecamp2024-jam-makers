@@ -10,8 +10,6 @@ signal remove_tile
 
 func _ready():
 	#new_sprite_texture = load("res://assets/plate.png")
-	super()
-	
 	if sprite != null:
 		sprite.texture = new_sprite_texture
 		child_sprite.texture = new_sprite_texture

@@ -14,6 +14,14 @@ func take_one(item: String):
 	if !items_slots.is_empty() and items_slots[0].amount != 0:
 		items_slots[0].amount -= 1
 		
+func put_one(item: String):
+	var inv_item = ResourceLoader.load(PlateDict.inv_items.get(item)) as InvPlate
+	var items_slots = slots.filter(func(slot): return slot.item == inv_item)
+	print("+1")
+	print(items_slots[0])
+	if !items_slots.is_empty():
+		items_slots[0].amount += 1
+		
 func not_empty(item_name: String) -> bool:
 	for slot in slots:
 		if slot.item and slot.item.name == item_name:

@@ -19,6 +19,10 @@ func take_one(item: String):
 	inv.take_one(item)
 	update_slots()
 	
+func put_one(item: String):
+	inv.put_one(item)
+	update_slots()
+	
 func not_empty(name: String):
 	return inv.not_empty(name)
 

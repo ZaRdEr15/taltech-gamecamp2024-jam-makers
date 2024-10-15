@@ -23,5 +23,6 @@ scale = Vector2(5, 5)
 focus_mode = 0
 toggle_mode = true
 icon = ExtResource("1_asfcf")
+flat = true
 icon_alignment = 1
 script = SubResource("GDScript_r5s7r")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://dnxt4oyogmrlp"]
+[gd_scene load_steps=22 format=3 uid="uid://dnxt4oyogmrlp"]
 
 [ext_resource type="Script" path="res://robot/robot.gd" id="1_naail"]
 [ext_resource type="Texture2D" uid="uid://cr8decbk5dego" path="res://assets/MAIN_robot_ death_1-3.png" id="2_eilhi"]
 [ext_resource type="Texture2D" uid="uid://5noucuf8d126" path="res://assets/MAIN_robot.png" id="2_lcq3x"]
 [ext_resource type="AudioStream" uid="uid://h0ntg07vayu4" path="res://sound/walking.wav" id="3_brtds"]
-[ext_resource type="Texture2D" uid="uid://b5sb6s71tfjg6" path="res://assets/MAIN_robot_ look_down.png" id="3_gqkbr"]
 [ext_resource type="Texture2D" uid="uid://cjx5g66uunnv5" path="res://assets/MAIN_robot_ walk_1-2.png" id="3_mlh1j"]
 [ext_resource type="Texture2D" uid="uid://drwih523pkte6" path="res://assets/MAIN_robot_ death_2-3.png" id="3_xyj0b"]
 [ext_resource type="AudioStream" uid="uid://cdymfuaybssrd" path="res://sound/death.wav" id="4_2xd50"]
@@ -40,9 +39,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_lcq3x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_gqkbr")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_yxj1j")
@@ -111,7 +107,7 @@ script = ExtResource("1_naail")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_600ue")
-animation = &"death"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yelq7")
@@ -120,6 +116,7 @@ shape = SubResource("RectangleShape2D_yelq7")
 target_position = Vector2(0, 16)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.004
 one_shot = true
 
 [node name="WalkingSound" type="AudioStreamPlayer" parent="."]

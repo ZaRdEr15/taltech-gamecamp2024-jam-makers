@@ -9,7 +9,7 @@ extends Area2D
 
 
 const TILE_SIZE: int = 16
-const TIMER_WAIT: int = 1
+const TIMER_WAIT: int = 0.01
 
 
 var starting_direction := Vector2.DOWN
